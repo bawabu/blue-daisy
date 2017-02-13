@@ -14,7 +14,7 @@ setup(
     license='MIT License',
     author='Evans Murithi',
     author_email='murithievans80@gmail.com',
-    packages=find_packages(exclude['tests', 'docs']),
+    packages=find_packages(exclude=['tests', 'docs']),
     description=(
         'A daemon using bluetooth to enable an android application to '
         'control your computer.'
