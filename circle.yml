@@ -1,0 +1,22 @@
+machine:
+    python:
+        version: 3.5.2
+
+dependencies:
+    pre:
+        - pip install tox
+        - sudo apt-get update; sudo apt-get -y install libbluetooth-dev
+
+    cache_directories:
+        - .tox/
+
+    override:
+        - tox --notest
+
+test:
+    override:
+        - tox
+
+general:
+    artifacts:
+        - "htmlcov"
