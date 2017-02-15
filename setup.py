@@ -8,7 +8,7 @@ with open('README.rst') as readme:
 
 
 setup(
-    name='blue_daisy',
+    name='blue-daisy',
     version=blue_daisy.__version__,
     url='https://github.com/bawabu/blue-daisy',
     license='MIT License',
