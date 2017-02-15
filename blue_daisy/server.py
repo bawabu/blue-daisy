@@ -13,7 +13,8 @@ class BlueDaisyServer:
         try:
             while True:
                 data = self._client_socket.recv(1024)
-                if len(data) == 0: break
+                if len(data) == 0:
+                    break
         except IOError:
             pass
 
