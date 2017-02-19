@@ -1,7 +1,7 @@
 import bluetooth as bt
 
 
-class BlueDaisyServer:
+class BluetoothServer:
 
     _server_socket = None
     _client_socket = None
