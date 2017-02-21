@@ -47,7 +47,7 @@ class Config:
         with open(CONFIG_FILE, 'w') as config_file:
             self.config.write(config_file)
 
-    def _press_keys(self, keys):
+    def _press_key_command(self, keys):
         kb = PyKeyboard()
 
         if len(keys) == 1:
@@ -55,7 +55,7 @@ class Config:
         else:
             kb.press_keys(keys)
 
-    def _run_command(self, command):
+    def _run_shell_command(self, command):
         return_code = subprocess.run(command).returncode
 
         if return_code != 0:
@@ -66,11 +66,11 @@ class Config:
         if self.config.has_option(section, option):
             value = self.config.get(section, option, fallback='').split(' ')
             if value[0] == 'key':
-                self._press_keys(value[1:])
-            elif value[0] == 'command':
-                self._run_command(value[1:])
+                self._press_key_command(value[1:])
+            elif value[0] == 'shell':
+                self._run_shell_command(value[1:])
             else:
-                self._run_command(value[1:])
+                self._run_shell_command(value[1:])
 
     def add_command(self, section, option, command):
         try:

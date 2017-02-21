@@ -1,4 +1,8 @@
+import json
+
 import bluetooth as bt
+
+from .config import Config
 
 
 class BluetoothServer:
@@ -15,6 +19,15 @@ class BluetoothServer:
                 data = self._client_socket.recv(1024)
                 if len(data) == 0:
                     break
+
+                command = json.loads(data)
+                if isinstance(command, dict):
+                    section = command.get('section', None)
+                    option = command.get('option', None)
+
+                    config = Config()
+                    config.execute_command(section, option)
+
         except IOError:
             pass
 
