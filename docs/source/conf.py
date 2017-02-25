@@ -20,11 +20,10 @@
 import os
 import sys
 
+from bluedaisy import __version__
+
 
 sys.path.insert(0, os.path.abspath('../..'))
-
-
-from bluedaisy import __version__
 
 
 # -- General configuration ------------------------------------------------
