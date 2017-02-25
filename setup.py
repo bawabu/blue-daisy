@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
+
 from setuptools import setup, find_packages
 
-import blue_daisy
+import bluedaisy
 
 
 with open('README.rst') as readme:
@@ -9,7 +11,7 @@ with open('README.rst') as readme:
 
 setup(
     name='blue-daisy',
-    version=blue_daisy.__version__,
+    version=bluedaisy.__version__,
     url='https://github.com/bawabu/blue-daisy',
     license='MIT License',
     author='Evans Murithi',

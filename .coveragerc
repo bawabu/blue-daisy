@@ -1,6 +1,6 @@
 [run]
 branch = True
-source = blue_daisy
+source = bluedaisy
 
 [report]
 show_missing = True
