@@ -19,12 +19,22 @@
 #
 import os
 import sys
-
-
-sys.path.insert(0, os.path.abspath('../..'))
-
+from unittest.mock import MagicMock
 
 from bluedaisy import __version__
+
+
+MOCK_MODULES = ['bluetooth']
+
+
+class Mock(MagicMock):
+    @classmethod
+    def __getattr__(cls, name):
+            return MagicMock()
+
+
+sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
+sys.path.insert(0, os.path.abspath('../..'))
 
 
 # -- General configuration ------------------------------------------------
