@@ -1,4 +1,12 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
+"""bluedaisy.bluedaisyd
+
+This module is responsible for daemonizing the application.
+
+Attributes:
+    PID_FILE (str): A path to the ``~/.bluedaisy/bluedaisy.pid`` file.
+"""
 
 import os
 
@@ -12,6 +20,7 @@ PID_FILE = os.path.expanduser('~/.bluedaisy/bluedaisy.pid')
 
 
 def run():
+    """Function to be run when daemon starts."""
     while True:
         config = Config()
         server = BluetoothServer(config)
