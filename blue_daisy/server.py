@@ -2,31 +2,33 @@ import json
 
 import bluetooth as bt
 
-from .config import Config
-
 
 class BluetoothServer:
 
     _server_socket = None
     _client_socket = None
 
-    def __init__(self):
+    def __init__(self, config):
+        self.config = config
         self._init_sockets()
 
     def receive_data(self):
         try:
             while True:
-                data = self._client_socket.recv(1024)
+                data = self._client_socket.recv(1024).decode('utf-8')
                 if len(data) == 0:
-                    break
+                    continue
 
-                command = json.loads(data)
+                try:
+                    command = json.loads(data)
+                except json.decoder.JSONDecodeError:
+                    continue
+
                 if isinstance(command, dict):
                     section = command.get('section', None)
                     option = command.get('option', None)
 
-                    config = Config()
-                    config.execute_command(section, option)
+                    self.config.execute_command(section, option)
 
         except IOError:
             pass

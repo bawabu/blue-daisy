@@ -6,7 +6,7 @@ from collections import OrderedDict
 from pykeyboard import PyKeyboard
 
 
-CONFIG_FILE = os.path.expanduser('~/.bluedaisy.conf')
+CONFIG_FILE = os.path.expanduser('~/.bluedaisy/bluedaisy.conf')
 
 DEFAULT_CONFIG = OrderedDict((
     ('general', OrderedDict((
