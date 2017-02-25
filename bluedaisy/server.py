@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""bluedaisy.server
+"""
+bluedaisy.server
+~~~~~~~~~~~~~~~~
 
 This module provides the capability to establish a bluetooth connection
 with a client device.
@@ -15,7 +17,9 @@ class BluetoothServer:
 
     Attributes:
         _server_socket (bluetooth.BluetoothSocket): A server socket.
+
         _client_socket (bluetooth.BluetoothSocket): A client socket.
+
         config (bluedaisy.config.Config): Handles the commands received from
             the client device.
     """
