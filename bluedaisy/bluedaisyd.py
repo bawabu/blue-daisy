@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-"""bluedaisy.bluedaisyd
+"""
+bluedaisy.bluedaisyd
+~~~~~~~~~~~~~~~~~~~~
 
 This module is responsible for daemonizing the application.
 

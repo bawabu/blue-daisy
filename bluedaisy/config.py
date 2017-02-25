@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""bluedaisy.config
+"""
+bluedaisy.config
+~~~~~~~~~~~~~~~~
 
 This module provides the capability to create and read the
 ``~/.bluedaisy/bluedaisy.conf`` configuration file.
@@ -7,6 +9,7 @@ This module provides the capability to create and read the
 Attributes:
     CONFIG_FILE (str): A path to the ``~/.bluedaisy/bluedaisy.conf``
         configuration file.
+
     DEFAULT_CONFIG (dict): An ordered dict containing the default
         configurations to instantiate the configuration file if it does
         not exist.
@@ -72,6 +75,7 @@ class Config:
         Args:
             section (str): A name of a section present in the configuration
                 file.
+
             option (str): A name of the option present under the section in
                 the configuration file.
         """
@@ -92,8 +96,10 @@ class Config:
 
         Args:
             section (str): A name of a section to insert the command in.
+
             option (str): A name of an option under the section to insert the
                 command in.
+
             command (str): The command to be inserted in the provided
                 [section][option].
         """
@@ -110,8 +116,10 @@ class Config:
 
         Args:
             section (str): A name of a section in the configuration file.
+
             option (str): A name of an option under the section in the
                 configuration file.
+
             command (str): The command to replace the previous command in the
                 provided [section][option].
         """
@@ -122,6 +130,7 @@ class Config:
 
         Args:
             section (str): A name of a section in the configuration file.
+
             option (str): A name of an option, under the section, whose
                 command is to be removed.
         """
