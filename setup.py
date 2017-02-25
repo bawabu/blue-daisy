@@ -25,7 +25,6 @@ setup(
     include_package_data=True,
     install_requires=[
         'PyBluez==0.22',
-        'python-daemon==2.1.2',
         'PyUserInput==0.1.11'
     ],
     classifiers=[
