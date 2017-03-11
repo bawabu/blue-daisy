@@ -27,24 +27,25 @@ CONFIG_FILE = os.path.expanduser('~/.bluedaisy/bluedaisy.conf')
 
 DEFAULT_CONFIG = OrderedDict((
     ('general', OrderedDict((
-        ('lock', 'key Super_L Shift_L X'),
-        ('brightness_up', ''),
-        ('brightness_down', ''),
-        ('wifi_on', ''),
-        ('wifi_off', ''),
+        ('lock', 'key Super_L L'),
+        ('brightness_up', 'shell xbacklight -inc 10'),
+        ('brightness_down', 'shell xbacklight -dec 10'),
+        ('wifi_on', 'shell nmcli radio wifi on'),
+        ('wifi_off', 'shell nmcli radio wifi off'),
     ))),
     ('media', OrderedDict((
-        ('volume_up', ''),
-        ('volume_down', ''),
-        ('mute', ''),
-        ('unmute', ''),
-        ('pause', ''),
-        ('next', ''),
-        ('previous', ''),
+        ('volume_up', 'shell pactl -- set-sink-volume 0 +10%%'),
+        ('volume_down', 'shell pactl -- set-sink-volume 0 -10%%'),
+        ('mute', 'shell pactl -- set-sink-mute 0 1'),
+        ('unmute', 'shell pactl -- set-sink-mute 0 0'),
+        ('pause', 'key space'),
+        ('next', 'key Right'),
+        ('previous', 'key Left'),
     ))),
     ('presentation', OrderedDict((
-        ('next', ''),
-        ('previous', ''),
+        ('start', 'key F5'),
+        ('next', 'key Right'),
+        ('previous', 'key Left'),
     ))),
 ))
 
